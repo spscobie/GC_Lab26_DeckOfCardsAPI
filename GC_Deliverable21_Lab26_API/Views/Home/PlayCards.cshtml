@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "PlayCards";
+}
+
+<h2>PlayCards</h2>
+<br />
+<br />
+<div class="container">
+    <div class="row align-items-center">
+        @for (int i = 0; i < ViewBag.Hand.Count; i++)
+        {
+            <div class="col-md-2">
+                <div class="panel panel-default" style="text-align: center">
+                    <div class="panel-heading">
+                        <h4 class="panel-title itemName" style="font-size: 11px">@ViewBag.Hand[i]["value"] of @ViewBag.Hand[i]["suit"]</h4>
+                    </div>
+                    <div class="panel-body bounding-box">
+                        <div class="thumbnail">
+                            <img class="img-responsive" src="@ViewBag.Hand[i]["image"]" />
+                        </div>
+                        <input class="btn btn-default btn-sm" type="button" value="Select" style="margin-top: 4px">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
